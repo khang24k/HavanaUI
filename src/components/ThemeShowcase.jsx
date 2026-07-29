@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Eye, Check, X, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Eye, Check, X, ShieldCheck, ArrowRight, Star } from 'lucide-react';
 
 export default function ThemeShowcase({ onOpenTrial }) {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -19,50 +19,60 @@ export default function ThemeShowcase({ onOpenTrial }) {
       id: 1,
       name: 'Havana Fashion Luxury',
       category: 'fashion',
+      categoryLabel: 'Thời Trang',
       rating: '4.9',
-      views: '12.4k',
+      reviews: '12.4k',
       badge: 'Bán Chạy Nhất',
       image: '/assets/theme_fashion_1784863995053.png',
+      desc: 'Giao diện thời trang sang trọng, thiết lập banner lớn, giỏ hàng popup thông minh.',
       description: 'Giao diện thời trang sang trọng, thiết lập banner lớn, giỏ hàng popup thông minh.'
     },
     {
       id: 2,
       name: 'Havana Organic Fresh',
       category: 'food',
+      categoryLabel: 'Thực Phẩm',
       rating: '5.0',
-      views: '9.8k',
+      reviews: '9.8k',
       badge: 'Chuẩn SEO Google',
       image: '/assets/theme_organic_1784864006847.png',
+      desc: 'Tối ưu cho thực phẩm sạch, nông sản, tích hợp giao hàng siêu tốc trong ngày.',
       description: 'Tối ưu cho thực phẩm sạch, nông sản, tích hợp giao hàng siêu tốc trong ngày.'
     },
     {
       id: 3,
       name: 'Havana Modern Living',
       category: 'furniture',
+      categoryLabel: 'Nội Thất',
       rating: '4.8',
-      views: '15.1k',
+      reviews: '15.1k',
       badge: 'Hot Trend 2026',
       image: '/assets/theme_furniture_1784864018562.png',
+      desc: 'Thiết kế tối giản cho ngành nội thất. Hỗ trợ xem ảnh 360 độ và thông số chi tiết.',
       description: 'Thiết kế tối giản cho ngành nội thất. Hỗ trợ xem ảnh 360 độ và thông số chi tiết.'
     },
     {
       id: 4,
       name: 'Havana Baby Care',
       category: 'kids',
+      categoryLabel: 'Mẹ & Bé',
       rating: '4.9',
-      views: '8.2k',
+      reviews: '8.2k',
       badge: 'Miễn Phí',
       image: '/assets/theme_baby_1784864029424.png',
+      desc: 'Tông màu tươi sáng, hệ thống phân loại theo độ tuổi, tích hợp đánh giá.',
       description: 'Tông màu tươi sáng, hệ thống phân loại theo độ tuổi, tích hợp đánh giá.'
     },
     {
       id: 5,
       name: 'Havana Corporate Elite',
       category: 'corporate',
+      categoryLabel: 'Doanh Nghiệp',
       rating: '4.9',
-      views: '11.3k',
+      reviews: '11.3k',
       badge: 'Uy Tín',
       image: '/assets/theme_corporate_1784864042713.png',
+      desc: 'Giao diện uy tín cho công ty, giới thiệu dịch vụ, hồ sơ năng lực và đặt lịch 1:1.',
       description: 'Giao diện uy tín cho công ty, giới thiệu dịch vụ, hồ sơ năng lực và đặt lịch 1:1.'
     },
     {
@@ -74,7 +84,8 @@ export default function ThemeShowcase({ onOpenTrial }) {
       reviews: '18.9k',
       badge: 'Khuyên Dùng',
       image: '/assets/theme_beauty_1784864056117.png',
-      desc: 'Tối ưu cho mỹ phẩm & spa. Tích hợp bộ lọc loại da và tư vấn liệu trình tự động.'
+      desc: 'Tối ưu cho mỹ phẩm & spa. Tích hợp bộ lọc loại da và tư vấn liệu trình tự động.',
+      description: 'Tối ưu cho mỹ phẩm & spa. Tích hợp bộ lọc loại da và tư vấn liệu trình tự động.'
     }
   ];
 
@@ -87,14 +98,15 @@ export default function ThemeShowcase({ onOpenTrial }) {
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 space-y-16">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 animate-fade-in-up">
-          <div className="inline-block bg-sky-50 text-sky-800 border border-sky-200 px-3.5 py-1.5 rounded-md text-xs font-bold uppercase transition-transform duration-200 hover:scale-105">
+          <div className="inline-block bg-sky-50 text-sky-800 border border-sky-200 px-3.5 py-1.5 rounded-md text-xs font-bold uppercase transition-transform duration-200 hover:scale-105 animate-pulse-badge">
             KHO GIAO DIỆN PHONG PHÚ
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-900 tracking-tight">
             Khám phá <span className="text-sky-600">400+ mẫu giao diện Havana</span> để bắt đầu kinh doanh
           </h2>
           <p className="text-zinc-500 font-normal text-base leading-relaxed">
-            Thiết kế sẵn cho từng ngành hàng cụ thể. Tất cả đều tối ưu chuẩn Mobile First & chuẩn SEO Google.
+            Thiết kế sẵn cho từng ngành hàng cụ thể: Thời trang, Mỹ phẩm, Điện máy, Thực phẩm, Nội thất... 
+            Tất cả đều tối ưu chuẩn Mobile First & chuẩn SEO Google.
           </p>
 
           {/* Categories Filter */}
@@ -109,7 +121,7 @@ export default function ThemeShowcase({ onOpenTrial }) {
                     : 'bg-zinc-50 text-zinc-700 border border-zinc-200 hover:bg-zinc-100 hover:border-zinc-300'
                 }`}
               >
-                {cat.label}
+                {cat.name}
               </button>
             ))}
           </div>
@@ -191,7 +203,7 @@ export default function ThemeShowcase({ onOpenTrial }) {
 
       {/* Live Preview Modal with entrance animation */}
       {selectedTheme && (
-        <div className="fixed inset-0 bg-zinc-900/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-opacity duration-300 animate-fade-in-up" onClick={() => setSelectedTheme(null)}>
+        <div className="fixed inset-0 bg-zinc-900/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-opacity duration-300 animate-pop-in" onClick={() => setSelectedTheme(null)}>
           <div className="bg-white rounded-xl max-w-3xl w-full overflow-hidden border border-zinc-200 shadow-xl transition-all duration-300 transform scale-100" onClick={e => e.stopPropagation()}>
             <div className="px-6 py-4 border-b border-zinc-200 flex items-center justify-between">
               <div className="text-sm font-bold text-zinc-900">
@@ -209,11 +221,11 @@ export default function ThemeShowcase({ onOpenTrial }) {
               <img 
                 src={selectedTheme.image} 
                 alt={selectedTheme.name} 
-                className="w-full h-64 object-cover rounded-xl border border-zinc-200 shadow-sm transition-transform duration-300 hover:scale-[1.01]"
+                className="w-full h-64 object-cover object-top rounded-xl border border-zinc-200 shadow-sm transition-transform duration-300 hover:scale-[1.01]"
               />
               <div className="space-y-1">
                 <h3 className="text-xl font-bold text-zinc-900">{selectedTheme.name}</h3>
-                <p className="text-sm text-zinc-500 font-normal max-w-md mx-auto">{selectedTheme.description}</p>
+                <p className="text-sm text-zinc-500 font-normal max-w-md mx-auto">{selectedTheme.desc}</p>
               </div>
               
               <div className="grid grid-cols-2 gap-3 text-left bg-white p-4 rounded-xl border border-zinc-200 text-xs font-semibold text-zinc-700">
