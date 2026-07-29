@@ -69,11 +69,12 @@ export default function ThemeShowcase({ onOpenTrial }) {
       id: 6,
       name: 'Havana Beauty & Spa',
       category: 'fashion',
+      categoryLabel: 'Mỹ Phẩm',
       rating: '5.0',
-      views: '18.9k',
+      reviews: '18.9k',
       badge: 'Khuyên Dùng',
       image: '/assets/theme_beauty_1784864056117.png',
-      description: 'Tối ưu cho mỹ phẩm & spa. Tích hợp bộ lọc loại da và tư vấn liệu trình tự động.'
+      desc: 'Tối ưu cho mỹ phẩm & spa. Tích hợp bộ lọc loại da và tư vấn liệu trình tự động.'
     }
   ];
 
@@ -82,8 +83,9 @@ export default function ThemeShowcase({ onOpenTrial }) {
     : themes.filter(t => t.category === activeCategory);
 
   return (
-    <section id="themes" className="py-24 bg-white border-t border-b border-zinc-200 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <section id="themes" className="py-24 bg-white border-b border-zinc-200">
+      <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 space-y-16">
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 animate-fade-in-up">
           <div className="inline-block bg-sky-50 text-sky-800 border border-sky-200 px-3.5 py-1.5 rounded-md text-xs font-bold uppercase transition-transform duration-200 hover:scale-105">
             KHO GIAO DIỆN PHONG PHÚ
@@ -92,72 +94,84 @@ export default function ThemeShowcase({ onOpenTrial }) {
             Khám phá <span className="text-sky-600">400+ mẫu giao diện Havana</span> để bắt đầu kinh doanh
           </h2>
           <p className="text-zinc-500 font-normal text-base leading-relaxed">
-            Tất cả giao diện Havana đều được tối ưu SEO Google, tương thích 100% trên điện thoại và tùy chỉnh dễ dàng.
+            Thiết kế sẵn cho từng ngành hàng cụ thể. Tất cả đều tối ưu chuẩn Mobile First & chuẩn SEO Google.
           </p>
 
-          {/* Category Tabs */}
-          <div className="flex flex-wrap justify-center gap-2.5 pt-6">
-            {categories.map((cat) => (
+          {/* Categories Filter */}
+          <div className="flex flex-wrap justify-center gap-2.5 pt-4">
+            {categories.map(cat => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
                 className={`px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 ${
                   activeCategory === cat.id
                     ? 'bg-sky-600 text-white shadow-sm scale-105'
-                    : 'bg-zinc-50 text-zinc-800 border border-zinc-200 hover:bg-zinc-100 hover:border-zinc-300'
+                    : 'bg-zinc-50 text-zinc-700 border border-zinc-200 hover:bg-zinc-100 hover:border-zinc-300'
                 }`}
               >
-                {cat.name}
+                {cat.label}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Theme Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredThemes.map((theme, idx) => (
+        {/* Themes Grid - Full Width 4 Columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {filteredThemes.map(theme => (
             <div 
               key={theme.id}
-              style={{ animationDelay: `${idx * 100}ms` }}
-              className="bg-white rounded-xl border border-zinc-200 shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-zinc-300 hover:shadow-lg animate-fade-in-up"
+              className="bg-white rounded-xl border border-zinc-200 shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:border-zinc-300 hover:shadow-xl animate-fade-in-up group"
             >
-              {/* Preview Image */}
-              <div className="h-56 bg-zinc-50 border-b border-zinc-200 relative overflow-hidden group">
+              {/* Thumbnail Container */}
+              <div className="relative aspect-[4/3] overflow-hidden bg-zinc-100">
                 <img 
                   src={theme.image} 
                   alt={theme.name} 
-                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
-                <span className="absolute top-3 left-3 bg-zinc-900/90 text-white text-[11px] font-bold px-3 py-1 rounded-md shadow-sm backdrop-blur-sm">
-                  {theme.badge}
-                </span>
+                
+                {/* Badges Overlay */}
+                <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                  <span className="bg-sky-600 text-white text-[10px] font-bold px-2.5 py-1 rounded shadow-sm">
+                    {theme.categoryLabel}
+                  </span>
+                  {theme.badge && (
+                    <span className="bg-zinc-900 text-white text-[10px] font-bold px-2.5 py-1 rounded shadow-sm">
+                      {theme.badge}
+                    </span>
+                  )}
+                </div>
+
+                {/* Rating */}
+                <div className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-md border border-zinc-200 text-[11px] font-bold text-zinc-900 flex items-center gap-1 shadow-sm">
+                  <Star size={12} className="text-amber-500 fill-amber-500" /> {theme.rating} ({theme.reviews})
+                </div>
               </div>
 
               {/* Theme Info */}
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-6">
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="text-sky-600 font-bold flex items-center gap-1.5">
-                      <ShieldCheck size={15} /> Chuẩn SEO
-                    </span>
-                    <span className="text-zinc-500 font-semibold">★ {theme.rating} ({theme.views})</span>
-                  </div>
-                  <h3 className="text-lg font-bold text-zinc-900 group-hover:text-sky-600 transition-colors duration-200">{theme.name}</h3>
-                  <p className="text-sm text-zinc-500 font-normal leading-relaxed">{theme.description}</p>
+              <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+                <div>
+                  <h3 className="text-base font-bold text-zinc-900 group-hover:text-sky-600 transition-colors duration-200">
+                    {theme.name}
+                  </h3>
+                  <p className="text-xs text-zinc-500 font-normal leading-relaxed mt-1">
+                    {theme.desc}
+                  </p>
                 </div>
 
-                <div className="flex gap-3 pt-3 border-t border-zinc-100">
+                {/* Actions */}
+                <div className="flex gap-2.5 pt-2">
                   <button 
                     onClick={() => setSelectedTheme(theme)}
                     className="flex-1 bg-zinc-50 text-zinc-900 border border-zinc-200 py-2.5 px-3 rounded-lg text-xs font-bold transition-all duration-200 hover:-translate-y-0.5 hover:bg-zinc-100 hover:border-zinc-300 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 flex items-center justify-center gap-1.5"
                   >
-                    <Eye size={14} /> Xem Demo Live
+                    <Eye size={14} /> XEM DEMO
                   </button>
                   <button 
                     onClick={() => onOpenTrial(theme.name)}
                     className="flex-1 bg-sky-600 text-white py-2.5 px-3 rounded-lg text-xs font-bold transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-700 hover:shadow-md active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
                   >
-                    Sử Dụng Giao Diện
+                    DÙNG MẪU NÀY
                   </button>
                 </div>
               </div>

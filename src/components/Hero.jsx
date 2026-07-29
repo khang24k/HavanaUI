@@ -15,11 +15,11 @@ export default function Hero({ onOpenTrial }) {
 
   return (
     <section id="hero" className="py-20 md:py-24 bg-zinc-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Content with entrance animation */}
           <div className="lg:col-span-7 space-y-8 animate-fade-in-up">
-            <div className="inline-block bg-sky-50 text-sky-800 border border-sky-200 px-3.5 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition-transform duration-200 hover:scale-105">
+            <div className="inline-block bg-sky-50 text-sky-800 border border-sky-200 px-3.5 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition-transform duration-200 hover:scale-105 animate-pulse-badge">
               Nền Tảng Thiết Kế Website Bán Hàng #1 Havana
             </div>
 
@@ -29,7 +29,7 @@ export default function Hero({ onOpenTrial }) {
                 kinh doanh vượt trội cùng <span className="text-sky-600">Havana</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-zinc-500 font-normal leading-relaxed max-w-2xl">
+              <p className="text-base sm:text-lg text-zinc-500 font-normal leading-relaxed max-w-3xl">
                 Tăng trưởng doanh thu đột phá với nền tảng bán hàng đa kênh chuyên nghiệp. 
                 Khởi tạo website bán hàng & doanh nghiệp chuẩn SEO trong 5 phút. 
                 <strong className="text-zinc-900 font-bold"> Miễn phí trải nghiệm 14 ngày!</strong>
@@ -37,7 +37,7 @@ export default function Hero({ onOpenTrial }) {
             </div>
 
             {/* Trial Form */}
-            <form onSubmit={handleSubmit} className="space-y-4 max-w-xl">
+            <form onSubmit={handleSubmit} className="space-y-4 max-w-2xl">
               <div className="flex flex-col sm:flex-row gap-3 bg-white p-2.5 rounded-xl border border-zinc-200 shadow-sm transition-all duration-200 focus-within:border-zinc-400 focus-within:shadow-md">
                 <input 
                   type="text" 
@@ -49,7 +49,7 @@ export default function Hero({ onOpenTrial }) {
                 />
                 <button 
                   type="submit" 
-                  className="bg-sky-600 text-white font-bold px-7 py-3 rounded-lg text-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-700 hover:shadow-md active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 flex items-center justify-center gap-2 whitespace-nowrap"
+                  className="btn-shimmer text-white font-bold px-7 py-3 rounded-lg text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 flex items-center justify-center gap-2 whitespace-nowrap"
                 >
                   TRẢI NGHIỆM MIỄN PHÍ <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
                 </button>
@@ -73,13 +73,11 @@ export default function Hero({ onOpenTrial }) {
                 <span className="text-xs text-zinc-500">(Từ 12,500+ đánh giá)</span>
               </div>
 
-              <p className="text-xs text-zinc-500">
-                Nền tảng được hơn <strong className="text-zinc-900 font-bold">60.000+ nhà kinh doanh và thương hiệu</strong> tin dùng:
-              </p>
-
-              <div className="flex flex-wrap gap-2.5 pt-1">
+              {/* Brand Logos Marquee */}
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="text-xs font-bold text-zinc-400 mr-2 uppercase tracking-wider">Tin dùng bởi:</span>
                 {brandLogos.map((brand, idx) => (
-                  <span key={idx} className="bg-white border border-zinc-200 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-zinc-700 shadow-sm transition-all duration-200 hover:border-zinc-400 hover:-translate-y-0.5">
+                  <span key={idx} className="bg-white border border-zinc-200 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-zinc-700 shadow-sm transition-all duration-200 hover:border-zinc-400 hover:-translate-y-0.5 hover:shadow-md">
                     {brand}
                   </span>
                 ))}
@@ -87,31 +85,38 @@ export default function Hero({ onOpenTrial }) {
             </div>
           </div>
 
-          {/* Right Realistic iPad Showcase Mockup with floating animation */}
-          <div className="lg:col-span-5 space-y-4 animate-fade-in-up">
-            <div className="bg-white rounded-2xl border border-zinc-200 shadow-sm overflow-hidden p-3 transition-all duration-500 hover:border-zinc-300 hover:shadow-lg hover:-translate-y-1 animate-float">
+          {/* Right Visual Mockup with floating elements */}
+          <div className="lg:col-span-5 relative">
+            <div className="bg-white rounded-2xl border border-zinc-200 shadow-sm overflow-hidden p-3 transition-all duration-500 hover:border-zinc-300 hover:shadow-lg hover:-translate-y-1 animate-float-slow">
               <img 
-                src="/assets/hero_ipad_mockup_1784865950168.png" 
-                alt="Havana Web iPad Store Mockup" 
-                className="w-full h-auto rounded-xl object-cover transition-transform duration-500 hover:scale-[1.02]"
+                src="/assets/hero_laptop_mockup_1784863982619.png" 
+                alt="Havana Dashboard Mockup" 
+                className="w-full h-auto rounded-xl object-cover"
               />
             </div>
 
-            {/* Highlights Cards */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* Floating Badge 1 - Top Left */}
+            <div className="absolute -top-6 -left-6 hidden sm:block animate-float-reverse">
               <div className="p-4 bg-white rounded-xl border border-zinc-200 shadow-sm flex items-center gap-3 transition-all duration-200 hover:border-zinc-300 hover:shadow-md hover:-translate-y-0.5">
-                <ShieldCheck size={22} className="text-sky-600 flex-shrink-0" />
+                <div className="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 border border-sky-100 flex items-center justify-center font-bold">
+                  <ShieldCheck size={20} />
+                </div>
                 <div>
-                  <div className="text-xs font-bold text-zinc-900">SEO Google #1</div>
-                  <div className="text-[11px] text-zinc-500 font-normal mt-0.5">Core Web Vitals 99%</div>
+                  <div className="text-xs font-bold text-zinc-900">Google Core Web Vitals</div>
+                  <div className="text-[11px] text-sky-600 font-semibold">Tốc độ &lt; 0.8 giây</div>
                 </div>
               </div>
+            </div>
 
+            {/* Floating Badge 2 - Bottom Right */}
+            <div className="absolute -bottom-6 -right-6 hidden sm:block animate-float-slow">
               <div className="p-4 bg-white rounded-xl border border-zinc-200 shadow-sm flex items-center gap-3 transition-all duration-200 hover:border-zinc-300 hover:shadow-md hover:-translate-y-0.5">
-                <BarChart3 size={22} className="text-zinc-900 flex-shrink-0" />
+                <div className="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 border border-sky-100 flex items-center justify-center font-bold">
+                  <Sparkles size={20} />
+                </div>
                 <div>
-                  <div className="text-xs font-bold text-zinc-900">Tăng Trưởng +250%</div>
-                  <div className="text-[11px] text-zinc-500 font-normal mt-0.5">Đồng bộ Shopee, TikTok</div>
+                  <div className="text-xs font-bold text-zinc-900">Tăng Trưởng Doanh Số</div>
+                  <div className="text-[11px] text-sky-600 font-semibold">+185% Đơn Hàng Mới</div>
                 </div>
               </div>
             </div>

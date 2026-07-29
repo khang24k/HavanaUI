@@ -83,9 +83,9 @@ export default function OmnichannelTabs({ onOpenTrial }) {
 
   return (
     <section id="omnichannel" className="py-24 bg-white border-b border-zinc-200 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 space-y-16">
         <div className="text-center max-w-3xl mx-auto space-y-4 animate-fade-in-up">
-          <div className="inline-block bg-sky-50 text-sky-800 border border-sky-200 px-3.5 py-1.5 rounded-md text-xs font-bold uppercase transition-transform duration-200 hover:scale-105">
+          <div className="inline-block bg-sky-50 text-sky-800 border border-sky-200 px-3.5 py-1.5 rounded-md text-xs font-bold uppercase transition-transform duration-200 hover:scale-105 animate-pulse-badge">
             HỆ SINH THÁI BÁN HÀNG ĐA KÊNH
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-900 tracking-tight">
@@ -119,9 +119,9 @@ export default function OmnichannelTabs({ onOpenTrial }) {
         </div>
 
         {/* Tab Content Box with entrance animation */}
-        <div key={activeTab} className="bg-zinc-50 rounded-2xl border border-zinc-200 p-8 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center transition-all duration-300 animate-fade-in-up">
+        <div key={activeTab} className="bg-zinc-50 rounded-2xl border border-zinc-200 p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center transition-all duration-300 animate-fade-in-up">
           <div className="lg:col-span-6 space-y-6">
-            <span className="inline-block bg-sky-50 text-sky-700 border border-sky-200 text-xs font-bold px-3.5 py-1.5 rounded-md shadow-sm">
+            <span className="inline-block bg-sky-50 text-sky-700 border border-sky-200 text-xs font-bold px-3.5 py-1.5 rounded-md shadow-sm animate-pulse-badge">
               {currentContent.badge}
             </span>
             <h3 className="text-2xl sm:text-3xl font-bold text-zinc-900">{currentContent.title}</h3>
@@ -129,7 +129,7 @@ export default function OmnichannelTabs({ onOpenTrial }) {
 
             <div className="space-y-3 pt-2">
               {currentContent.features.map((feat, idx) => (
-                <div key={idx} className="flex items-center gap-2.5 text-sm font-semibold text-zinc-800 transition-transform duration-200 hover:translate-x-1">
+                <div key={idx} className="flex items-center gap-2.5 text-sm font-semibold text-zinc-800 transition-transform duration-200 hover:translate-x-1.5">
                   <CheckCircle2 size={18} className="text-sky-600 flex-shrink-0" />
                   <span>{feat}</span>
                 </div>
@@ -139,7 +139,7 @@ export default function OmnichannelTabs({ onOpenTrial }) {
             <div className="pt-2">
               <button 
                 onClick={() => onOpenTrial()}
-                className="bg-sky-600 text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-700 hover:shadow-md active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 inline-flex items-center gap-2"
+                className="btn-shimmer text-white font-bold px-8 py-4 rounded-xl text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 inline-flex items-center gap-2"
               >
                 KHÁM PHÁ TÍNH NĂNG NÀY <ArrowRight size={16} />
               </button>
@@ -148,13 +148,13 @@ export default function OmnichannelTabs({ onOpenTrial }) {
 
           <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {currentContent.partners.map((item, idx) => (
-              <div key={idx} className="bg-white p-5 rounded-xl border border-zinc-200 shadow-sm flex items-start gap-3.5 transition-all duration-200 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-md">
-                <div className="w-9 h-9 rounded-lg bg-zinc-100 text-zinc-900 flex items-center justify-center flex-shrink-0 mt-0.5 transition-transform duration-300 hover:rotate-12">
-                  <RefreshCw size={16} />
+              <div key={idx} className="bg-white p-6 rounded-xl border border-zinc-200 shadow-sm flex items-start gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-zinc-300 hover:shadow-md group">
+                <div className="w-10 h-10 rounded-lg bg-zinc-100 text-zinc-900 flex items-center justify-center flex-shrink-0 mt-0.5 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110 group-hover:bg-sky-50 group-hover:text-sky-600">
+                  <RefreshCw size={18} />
                 </div>
                 <div className="space-y-1">
-                  <h5 className="text-xs font-bold text-zinc-900">{item.name}</h5>
-                  <p className="text-[11px] text-zinc-500 font-normal leading-relaxed">{item.desc}</p>
+                  <h5 className="text-sm font-bold text-zinc-900 group-hover:text-sky-600 transition-colors">{item.name}</h5>
+                  <p className="text-xs text-zinc-500 font-normal leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}

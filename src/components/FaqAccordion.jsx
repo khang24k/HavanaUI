@@ -29,9 +29,9 @@ export default function FaqAccordion() {
 
   return (
     <section id="faqs" className="py-24 bg-white border-t border-b border-zinc-200">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        <div className="text-center space-y-4">
-          <div className="inline-block bg-sky-50 text-sky-800 border border-sky-200 px-3.5 py-1.5 rounded-md text-xs font-bold uppercase">
+      <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 space-y-16">
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-block bg-sky-50 text-sky-800 border border-sky-200 px-3.5 py-1.5 rounded-md text-xs font-bold uppercase animate-pulse-badge">
             GIẢI ĐÁP THẮC MẮC
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-900 tracking-tight">
@@ -42,16 +42,16 @@ export default function FaqAccordion() {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="max-w-5xl mx-auto space-y-4">
           {faqs.map((item, idx) => {
             const isOpen = openIdx === idx;
             return (
               <div 
                 key={idx} 
-                className={`bg-white rounded-xl border transition-all duration-200 ${
+                className={`bg-white rounded-xl border transition-all duration-300 ${
                   isOpen 
-                    ? 'border-sky-600 shadow-sm' 
-                    : 'border-zinc-200 hover:border-zinc-300'
+                    ? 'border-sky-600 shadow-md' 
+                    : 'border-zinc-200 hover:border-zinc-300 hover:shadow-sm'
                 }`}
               >
                 <button 
@@ -59,11 +59,11 @@ export default function FaqAccordion() {
                   className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base text-zinc-900 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-xl"
                 >
                   <span>{item.q}</span>
-                  <ChevronDown size={20} className={`text-zinc-400 transition-transform duration-200 flex-shrink-0 ${isOpen ? 'rotate-180 text-sky-600' : ''}`} />
+                  <ChevronDown size={20} className={`text-zinc-400 transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180 text-sky-600' : ''}`} />
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-2 text-sm text-zinc-500 font-normal border-t border-zinc-100 leading-relaxed">
+                  <div className="px-6 pb-6 pt-2 text-sm text-zinc-500 font-normal border-t border-zinc-100 leading-relaxed animate-pop-in">
                     {item.a}
                   </div>
                 )}

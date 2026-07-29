@@ -11,25 +11,25 @@ export default function CtaBanner({ onOpenTrial }) {
 
   return (
     <section className="py-24 bg-zinc-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-zinc-900 text-white rounded-2xl p-10 sm:p-14 md:p-16 text-center space-y-8 shadow-sm border border-zinc-800">
-          <div className="inline-block bg-sky-950/80 text-sky-400 border border-sky-800 px-3.5 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider">
+      <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24">
+        <div className="bg-zinc-900 text-white rounded-2xl p-10 sm:p-14 md:p-20 text-center space-y-8 shadow-xl border border-zinc-800 relative overflow-hidden">
+          <div className="inline-block bg-sky-950/80 text-sky-400 border border-sky-800 px-3.5 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider animate-pulse-badge">
             KHỞI TẠO TƯƠNG LAI KINH DOANH
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white max-w-4xl mx-auto">
               Sẵn sàng bứt phá doanh số với <span className="text-sky-400">Website Havana</span>?
             </h2>
 
-            <p className="text-sm sm:text-base text-zinc-400 font-normal max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-400 font-normal max-w-3xl mx-auto leading-relaxed">
               Hơn 60.000+ nhà bán hàng đã lựa chọn Havana để xây dựng kênh bán đa kênh chuyên nghiệp. 
               Đăng ký trải nghiệm miễn phí 14 ngày ngay hôm nay!
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto pt-2">
-            <div className="flex flex-col sm:flex-row gap-3 bg-white/10 p-2.5 rounded-xl border border-zinc-700">
+          <form onSubmit={handleSubmit} className="max-w-xl mx-auto pt-2">
+            <div className="flex flex-col sm:flex-row gap-3 bg-white/10 p-2.5 rounded-xl border border-zinc-700 backdrop-blur-sm">
               <input 
                 type="text" 
                 placeholder="Nhập email của bạn..."
@@ -40,7 +40,7 @@ export default function CtaBanner({ onOpenTrial }) {
               />
               <button 
                 type="submit" 
-                className="bg-sky-500 text-white font-bold px-7 py-3 rounded-lg text-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-400 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 flex items-center justify-center gap-2 whitespace-nowrap"
+                className="btn-shimmer-dark text-white font-bold px-8 py-3.5 rounded-lg text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 flex items-center justify-center gap-2 whitespace-nowrap"
               >
                 TẠO WEBSITE <ArrowRight size={16} />
               </button>

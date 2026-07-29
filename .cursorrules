@@ -1,37 +1,61 @@
 # Project Rules & Design System Guidelines (.cursorrules)
 
-## Language & General Rules
-- Luôn trả lời bằng tiếng Việt (Always respond in Vietnamese).
-- Brand Name: **Havana** (Platform: **HavanaWeb**).
-- Stack: **Vite + React (JSX) + Tailwind CSS + Lucide React Icons**.
+## 1. Language & General Guidelines
+- **Language**: Always respond and write documentation/comments in Vietnamese (Luôn trả lời và giải thích bằng tiếng Việt).
+- **Brand Name**: Havana (Platform: **HavanaWeb**).
+- **Tech Stack**: Vite + React (JSX) + Tailwind CSS + Lucide React Icons.
+- **Code Style**: Functional components, clean code, modular architecture, explicit naming, semantic HTML5 tags (`<header>`, `<main>`, `<section>`, `<footer>`, `<article>`).
 
-## Modern Minimalist Design System Rules (Bắt Buộc Tuân Thủ)
+---
 
-### 1. Color Palette & Neutral Base (Khử Cảm Giác AI)
-- **Neutral Base (Chủ đạo)**: Sử dụng hệ **Zinc** tự nhiên, sang trọng (phong cách Vercel/Linear).
-  - Page Background: `bg-zinc-50` (hoặc `bg-white` cho khối nội dung chính).
-  - Component Background: `bg-white` hoặc `bg-zinc-50` / `bg-zinc-100/60`.
-  - Primary Text: `text-zinc-900` (`#18181B`).
-  - Muted/Secondary Text: `text-zinc-500` (`#71717A`).
-- **Primary Accent & Brand Color**: **Sky Blue (Xanh Da Trời)** (`sky-600`, `sky-500`, `sky-50`, `sky-100`, `sky-200`, `sky-700`, `sky-800`).
-  - Primary Buttons: `bg-sky-600 text-white hover:bg-sky-700` hoặc `bg-sky-500 text-white hover:bg-sky-400`.
-  - Badges & Highlights: `bg-sky-50 text-sky-800 border-sky-200` hoặc `text-sky-600`.
-  - Focus Visible Ring: `focus-visible:ring-2 focus-visible:ring-sky-500`.
-- **PROHIBITED (TUYỆT ĐỐI CẤM)**:
-  - KHÔNG dùng hệ màu Slate (xám ngả xanh cũ), KHÔNG dùng Indigo (`indigo-600`), Purple (`violet-600`), Cyan (`cyan-500`). Đây là các tông màu nhận diện rập khuôn của AI UI.
-  - KHÔNG sử dụng màu gradient rực rỡ, KHÔNG dùng hiệu ứng phát sáng (glow effect) màu tím/xanh neon.
+## 2. Modern Minimalist Design System Rules (Bắt Buộc Tuân Thủ)
 
-### 2. Typography Guidelines (Tinh Tế & Chân Thực)
-- **Font**: Sử dụng font không chân (Sans-serif) hiện đại như `Plus Jakarta Sans` hoặc `Inter`.
-- **Font Weight (Cấm ExtraBold)**: Sử dụng `font-bold` (weight 700) hoặc `font-semibold` (weight 600) cho tiêu đề. **TUYỆT ĐỐI CẤM dùng `font-extrabold`** để tránh cảm giác thô cứng, nặng nề kiểu AI tự tạo.
-- **Hierarchy & Spacing**: Phân cấp thị giác rõ ràng bằng typography (`font-bold text-zinc-900` cho tiêu đề, `font-normal text-zinc-500` cho mô tả, kết hợp `leading-tight` và `tracking-tight`).
+### A. Color Palette & Backgrounds (Tránh "Mùi AI")
+- **Backgrounds**: Ưa chuộng các tông màu trung tính sạch, sáng nhẹ:
+  - Base background: `bg-slate-50` hoặc `bg-zinc-50`.
+  - Card/Container background: `bg-white`.
+- **Primary Text**: `text-slate-900` hoặc `text-zinc-900` (Tuyệt đối không dùng màu đen tuyền `#000000`).
+- **Muted Text**: `text-slate-500` hoặc `text-zinc-500`.
+- **Accent Color (Tiết chế)**: Chỉ chọn 1 màu nhấn duy nhất cho các nút chính (CTA) hoặc điểm nhấn quan trọng (ví dụ: `indigo-600` hoặc `emerald-600` hoặc `amber-500`).
+- ❌ **CẤM SỬ DỤNG (AI Tropes)**:
+  - Bắt buộc KHÔNG dùng dải màu gradient mặc định kiểu `from-purple-500 to-indigo-600`.
+  - KHÔNG dùng hiệu ứng glowing neon sặc sỡ trên nền tối.
 
-### 3. Borders, Shadows & Bo Góc
-- **Borders**: Viền siêu mỏng, tinh tế (`border border-zinc-200` hoặc `border-zinc-200/80`).
-- **Shadows**: Chỉ dùng bóng đổ siêu nhẹ (`shadow-sm`). Tránh tuyệt đối shadow lem luốc.
-- **Bo Góc (Radius)**: KHÔNG bo tròn tất cả các phần tử (`rounded-full`) một cách vô tội vạ. Sử dụng `rounded-lg` hoặc `rounded-xl` thống nhất cho card và button.
+### B. Typography & Text Hierarchy
+- **Heading Styling**:
+  - Tiêu đề lớn (Display/Hero): `tracking-tight font-bold text-slate-900`.
+  - Section Heading: `text-2xl` đến `text-3xl`, `font-bold text-slate-900`.
+  - Subtitle / Lead Paragraph: `text-base` hoặc `text-lg`, `text-slate-600 font-normal`.
+  - Eyebrow / Badge Label: `text-xs font-semibold uppercase tracking-wider text-slate-500`.
+- **Alignment**: Ưu tiên **Căn trái (left-aligned)** thay vì căn giữa rập khuôn toàn bộ trang.
 
-### 4. Micro-interactions & Accessibility
-- **Hover Effects**: Bắt buộc có hiệu ứng di chuột mượt mà (`transition-all duration-200 hover:border-zinc-300 hover:shadow-md hover:-translate-y-0.5`).
-- **Accessibility**: Bắt buộc hỗ trợ `:focus-visible` ring cho tất cả button và interactive card (`focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2`).
-- **Hình Ảnh & Icon**: Sử dụng hình ảnh thực tế chất lượng cao, biểu tượng nét mảnh từ `lucide-react`. Cấm dùng emoji trang trí trong tiêu đề.
+### C. Borders, Shadows & Corners
+- **Border-first Design**: Sử dụng đường viền siêu mỏng, tinh tế thay cho bóng đổ dày:
+  - Preferred borders: `border border-slate-200/80` hoặc `border-slate-100`.
+- **Shadows**: Dùng bóng mỏng nhẹ, tự nhiên: `shadow-sm` hoặc `shadow-md` (chỉ khi hover).
+- **Góc Bo (Border Radius)**: 
+  - Thẻ / Card / Modal: `rounded-xl` hoặc `rounded-lg`.
+  - Nút / Input: `rounded-md` hoặc `rounded-lg`.
+  - ❌ Tránh dùng góc bo quá đà như `rounded-3xl` hoặc `rounded-full` cho các thẻ container lớn.
+
+### D. Whitespace & Layout Structure
+- **Tăng Khoảng Trắng (Generous Spacing)**:
+  - Section Padding: Dùng `py-16 md:py-24` để tạo độ thoáng.
+  - Grid/Flex Gap: Dùng `gap-6`, `gap-8` hoặc `gap-12`.
+- **Layout Architecture**:
+  - Dùng **Bento Grid** (lưới các thẻ kích thước linh hoạt 1-col, 2-col, 3-col) thay vì 3 card giống hệt nhau.
+  - Sử dụng cấu trúc bất đối xứng (Asymmetric Layouts) để tăng tính nghệ thuật và trải nghiệm người dùng.
+
+### E. Micro-interactions & Buttons
+- **Primary Button**: `bg-slate-900 text-white hover:bg-slate-800 transition-colors duration-200 px-4 py-2.5 rounded-lg font-medium text-sm shadow-sm`.
+- **Secondary Button**: `bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition-colors duration-200 px-4 py-2.5 rounded-lg font-medium text-sm`.
+- **Hover Transitions**: Hiệu ứng chuyển động mượt, tiết chế: `transition-all duration-200 hover:-translate-y-0.5`.
+
+---
+
+## 3. UI Refactoring Checklist for AI
+Mỗi khi sinh ra hoặc chỉnh sửa code component UI, AI phải kiểm tra:
+1. [ ] Có đang bị lạm dụng gradient tím/xanh hay bóng đổ quá dày không? (Nếu có -> Đổi về `bg-slate-50` & `border-slate-200`).
+2. [ ] Các phần tử có bị quá sít nhau không? (Nếu có -> Tăng `gap` và `padding`).
+3. [ ] Icon từ `lucide-react` đã được đặt kích thước chuẩn chưa? (Dùng `size={18}` hoặc `size={20}`, màu matching với text).
+4. [ ] Layout có bị căn giữa nhàm chán không? (Nếu có -> Đổi Hero/Section sang dạng left-aligned).

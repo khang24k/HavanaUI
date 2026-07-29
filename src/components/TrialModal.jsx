@@ -30,7 +30,7 @@ export default function TrialModal({ isOpen, onClose, initialData = '' }) {
 
   return (
     <div className="fixed inset-0 bg-zinc-900/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={onClose}>
-      <div className="bg-white rounded-xl max-w-md w-full overflow-hidden border border-zinc-200 shadow-sm relative" onClick={e => e.stopPropagation()}>
+      <div className="bg-white rounded-xl max-w-md w-full overflow-hidden border border-zinc-200 shadow-xl relative animate-pop-in" onClick={e => e.stopPropagation()}>
         <button 
           onClick={onClose}
           className="absolute top-4 right-4 text-zinc-400 hover:text-zinc-900 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 p-1 rounded-md"
@@ -42,7 +42,7 @@ export default function TrialModal({ isOpen, onClose, initialData = '' }) {
         {!isSuccess ? (
           <div className="p-8 space-y-6">
             <div className="text-center space-y-2">
-              <div className="inline-block bg-sky-50 text-sky-800 border border-sky-200 px-3.5 py-1.5 rounded-md text-xs font-bold uppercase">
+              <div className="inline-block bg-sky-50 text-sky-800 border border-sky-200 px-3.5 py-1.5 rounded-md text-xs font-bold uppercase animate-pulse-badge">
                 MIỄN PHÍ 14 NGÀY DÙNG THỬ
               </div>
               <h3 className="text-2xl font-bold text-zinc-900">Khởi Tạo Website <span className="text-sky-600">Havana</span> Ngay</h3>

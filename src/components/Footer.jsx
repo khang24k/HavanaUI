@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Facebook, Youtube, ShieldCheck } from 'lucide-reac
 export default function Footer() {
   return (
     <footer className="bg-zinc-900 text-zinc-400 py-16 border-t border-zinc-800 text-xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 space-y-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12 border-b border-zinc-800">
           {/* Brand info */}
           <div className="lg:col-span-4 space-y-5">
