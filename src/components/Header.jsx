@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Menu, X, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { ChevronDown, ChevronRight, Menu, X, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
 
 export default function Header({ onOpenTrial }) {
   const [isScrolled, setIsScrolled] = useState(false);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Star, ShieldCheck, BarChart3 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Star, ShieldCheck, BarChart3, Sparkles } from 'lucide-react';
 
 export default function Hero({ onOpenTrial }) {
   const [emailInput, setEmailInput] = useState('');
@@ -89,9 +89,9 @@ export default function Hero({ onOpenTrial }) {
           <div className="lg:col-span-5 relative">
             <div className="bg-white rounded-2xl border border-zinc-200 shadow-sm overflow-hidden p-3 transition-all duration-500 hover:border-zinc-300 hover:shadow-lg hover:-translate-y-1 animate-float-slow">
               <img 
-                src="/assets/hero_laptop_mockup_1784863982619.png" 
-                alt="Havana Dashboard Mockup" 
-                className="w-full h-auto rounded-xl object-cover"
+                src="/assets/hero_ipad_mockup_1784865950168.png" 
+                alt="Havana Web iPad Store Mockup" 
+                className="w-full h-auto rounded-xl object-cover transition-transform duration-500 hover:scale-[1.02]"
               />
             </div>
 

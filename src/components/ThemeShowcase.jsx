@@ -24,20 +24,18 @@ export default function ThemeShowcase({ onOpenTrial }) {
       reviews: '12.4k',
       badge: 'Bán Chạy Nhất',
       image: '/assets/theme_fashion_1784863995053.png',
-      desc: 'Giao diện thời trang sang trọng, thiết lập banner lớn, giỏ hàng popup thông minh.',
-      description: 'Giao diện thời trang sang trọng, thiết lập banner lớn, giỏ hàng popup thông minh.'
+      desc: 'Giao diện thời trang sang trọng, thiết lập banner lớn, giỏ hàng popup thông minh.'
     },
     {
       id: 2,
       name: 'Havana Organic Fresh',
       category: 'food',
-      categoryLabel: 'Thực Phẩm',
+      categoryLabel: 'Ẩm Thực',
       rating: '5.0',
       reviews: '9.8k',
       badge: 'Chuẩn SEO Google',
       image: '/assets/theme_organic_1784864006847.png',
-      desc: 'Tối ưu cho thực phẩm sạch, nông sản, tích hợp giao hàng siêu tốc trong ngày.',
-      description: 'Tối ưu cho thực phẩm sạch, nông sản, tích hợp giao hàng siêu tốc trong ngày.'
+      desc: 'Tối ưu cho thực phẩm sạch, nông sản, tích hợp giao hàng siêu tốc trong ngày.'
     },
     {
       id: 3,
@@ -48,8 +46,7 @@ export default function ThemeShowcase({ onOpenTrial }) {
       reviews: '15.1k',
       badge: 'Hot Trend 2026',
       image: '/assets/theme_furniture_1784864018562.png',
-      desc: 'Thiết kế tối giản cho ngành nội thất. Hỗ trợ xem ảnh 360 độ và thông số chi tiết.',
-      description: 'Thiết kế tối giản cho ngành nội thất. Hỗ trợ xem ảnh 360 độ và thông số chi tiết.'
+      desc: 'Thiết kế tối giản cho ngành nội thất. Hỗ trợ xem ảnh 360 độ và thông số chi tiết.'
     },
     {
       id: 4,
@@ -60,8 +57,7 @@ export default function ThemeShowcase({ onOpenTrial }) {
       reviews: '8.2k',
       badge: 'Miễn Phí',
       image: '/assets/theme_baby_1784864029424.png',
-      desc: 'Tông màu tươi sáng, hệ thống phân loại theo độ tuổi, tích hợp đánh giá.',
-      description: 'Tông màu tươi sáng, hệ thống phân loại theo độ tuổi, tích hợp đánh giá.'
+      desc: 'Tông màu tươi sáng, hệ thống phân loại theo độ tuổi, tích hợp đánh giá.'
     },
     {
       id: 5,
@@ -72,8 +68,7 @@ export default function ThemeShowcase({ onOpenTrial }) {
       reviews: '11.3k',
       badge: 'Uy Tín',
       image: '/assets/theme_corporate_1784864042713.png',
-      desc: 'Giao diện uy tín cho công ty, giới thiệu dịch vụ, hồ sơ năng lực và đặt lịch 1:1.',
-      description: 'Giao diện uy tín cho công ty, giới thiệu dịch vụ, hồ sơ năng lực và đặt lịch 1:1.'
+      desc: 'Giao diện uy tín cho công ty, giới thiệu dịch vụ, hồ sơ năng lực và đặt lịch 1:1.'
     },
     {
       id: 6,
@@ -84,8 +79,7 @@ export default function ThemeShowcase({ onOpenTrial }) {
       reviews: '18.9k',
       badge: 'Khuyên Dùng',
       image: '/assets/theme_beauty_1784864056117.png',
-      desc: 'Tối ưu cho mỹ phẩm & spa. Tích hợp bộ lọc loại da và tư vấn liệu trình tự động.',
-      description: 'Tối ưu cho mỹ phẩm & spa. Tích hợp bộ lọc loại da và tư vấn liệu trình tự động.'
+      desc: 'Tối ưu cho mỹ phẩm & spa. Tích hợp bộ lọc loại da và tư vấn liệu trình tự động.'
     }
   ];
 
@@ -105,8 +99,7 @@ export default function ThemeShowcase({ onOpenTrial }) {
             Khám phá <span className="text-sky-600">400+ mẫu giao diện Havana</span> để bắt đầu kinh doanh
           </h2>
           <p className="text-zinc-500 font-normal text-base leading-relaxed">
-            Thiết kế sẵn cho từng ngành hàng cụ thể: Thời trang, Mỹ phẩm, Điện máy, Thực phẩm, Nội thất... 
-            Tất cả đều tối ưu chuẩn Mobile First & chuẩn SEO Google.
+            Thiết kế sẵn cho từng ngành hàng cụ thể. Tất cả đều tối ưu chuẩn Mobile First & chuẩn SEO Google.
           </p>
 
           {/* Categories Filter */}
@@ -211,44 +204,34 @@ export default function ThemeShowcase({ onOpenTrial }) {
               </div>
               <button 
                 onClick={() => setSelectedTheme(null)}
-                className="text-zinc-400 hover:text-zinc-900 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 p-1 rounded-md"
+                className="text-zinc-400 hover:text-zinc-900 transition-colors p-1 rounded-md"
               >
                 <X size={20} />
               </button>
             </div>
-
-            <div className="p-6 bg-zinc-50 space-y-5 text-center">
-              <img 
-                src={selectedTheme.image} 
-                alt={selectedTheme.name} 
-                className="w-full h-64 object-cover object-top rounded-xl border border-zinc-200 shadow-sm transition-transform duration-300 hover:scale-[1.01]"
-              />
-              <div className="space-y-1">
-                <h3 className="text-xl font-bold text-zinc-900">{selectedTheme.name}</h3>
-                <p className="text-sm text-zinc-500 font-normal max-w-md mx-auto">{selectedTheme.desc}</p>
+            
+            <div className="p-6 space-y-4">
+              <div className="aspect-video bg-zinc-100 rounded-lg overflow-hidden border border-zinc-200 relative">
+                <img 
+                  src={selectedTheme.image} 
+                  alt={selectedTheme.name} 
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
-              
-              <div className="grid grid-cols-2 gap-3 text-left bg-white p-4 rounded-xl border border-zinc-200 text-xs font-semibold text-zinc-700">
-                <span className="flex items-center gap-2"><Check size={15} className="text-sky-600" /> Tốc độ tải trang &lt; 0.8 giây</span>
-                <span className="flex items-center gap-2"><Check size={15} className="text-sky-600" /> Tối ưu ảnh WebP chuẩn Google</span>
-                <span className="flex items-center gap-2"><Check size={15} className="text-sky-600" /> Tích hợp thanh toán online</span>
-                <span className="flex items-center gap-2"><Check size={15} className="text-sky-600" /> Tương thích Mobile, PC</span>
-              </div>
-            </div>
 
-            <div className="px-6 py-4 bg-white border-t border-zinc-200 flex justify-end gap-3">
-              <button 
-                onClick={() => setSelectedTheme(null)}
-                className="px-4 py-2.5 border border-zinc-200 rounded-lg text-xs font-bold text-zinc-700 hover:bg-zinc-50 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
-              >
-                Đóng
-              </button>
-              <button 
-                onClick={() => { setSelectedTheme(null); onOpenTrial(selectedTheme.name); }}
-                className="px-5 py-2.5 bg-sky-600 text-white rounded-lg text-xs font-bold transition-all duration-200 hover:-translate-y-0.5 hover:bg-sky-700 hover:shadow-md active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 flex items-center gap-2"
-              >
-                Dùng Miễn Phí Giao Diện Này
-              </button>
+              <div className="flex items-center justify-between pt-2">
+                <div>
+                  <div className="text-base font-bold text-zinc-900">{selectedTheme.name}</div>
+                  <div className="text-xs text-zinc-500 font-normal">{selectedTheme.desc}</div>
+                </div>
+
+                <button 
+                  onClick={() => { setSelectedTheme(null); onOpenTrial(selectedTheme.name); }}
+                  className="bg-sky-600 text-white font-bold px-6 py-3 rounded-lg text-xs transition-all duration-200 hover:bg-sky-700 hover:shadow-md"
+                >
+                  SỬ DỤNG GIAO DIỆN NÀY
+                </button>
+              </div>
             </div>
           </div>
         </div>
